@@ -1,0 +1,199 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: rgba(223, 223, 227, 0.416);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  }
+
+     .navBar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      border:1px solid rgb(172, 168, 168);
+      
+    }
+    .navBar h1{
+      color: #0290ff;
+    }
+    
+    .navbarList ul {
+      list-style: none;
+      display: flex;
+  
+      margin-right: 200px;
+    }
+    
+    .navbarList li {
+      margin: 20px;
+      
+      
+    }
+    
+    .navbarList a {
+      text-decoration: none;  
+      color: #121212;
+      font-size: 20px;
+      font-weight: 400;
+      
+    }
+    
+    .navbarIcon {
+      display: flex;
+      align-items: center;
+    }
+    .BookContainer{
+    
+      
+    }
+    .BookContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    border: 1px solid rgb(173, 170, 170);
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+    
+    
+    }
+    .BookContentMain p{
+    
+color:#0290ff ;
+    }
+    .buttons{
+   
+    }
+    .buttons button {
+  
+      cursor: pointer;
+      color:#0290ff ;
+       margin-right: 20px;
+      
+    }
+    
+    .BookContentMiddle{
+      display: flex;
+    }
+    .percentageNumber {
+display: inline;
+
+    }
+    .percentageNumber span{
+      font-size: 40px;
+    }
+      
+    .BookContentLast {
+      display:grid;
+      grid-gap: 10px;
+    }
+    .BookContentLast button{
+      background-color: #0290ff;
+      width: 120px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+    }
+    .separator {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin:30px auto;
+      width: 80%;
+      
+    }
+    
+  
+    .BookformContainer{
+      width: 80%;
+      margin: auto;
+      
+    }
+    .bookForm {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     
+   
+    }
+    .bookForm input{
+      font-size: 1rem;
+      border: 1px solid rgb(187, 184, 184);
+      border-radius: 4px;
+      font-size: 1rem;
+      padding: 0.5rem;
+  }
+    .bookForm button{
+      width: 150px;
+      height: 50px;
+      background-color: #0290ff;
+      border: none;
+      border-radius: 5px;
+    }
+    .modal{
+      width:500px ;
+      
+      background-color: white;
+      border-radius: 5px;
+      margin: auto;
+      position: absolute;
+      top: 150px;
+      left: 500px;
+    }
+    .modalContent{
+      width: 400px;
+      height: 400px;
+      background-color: rgb(253, 252, 251);
+      margin: auto ;
+    }
+    .modelContentButton button {
+      float: right;
+      color: #4a4a4a;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+   
+    }
+    .modalContent h2{
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 24px;
+  }
+  .Comment{
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100px;
+    outline: none;
+    padding: 8px;
+    resize: none;
+    width: 100%;
+  }
+  .submit{
+    background-color: #0290ff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin: 16px 0;
+    padding: 14px 20px;
+    transition: background-color .3s;
+    width: 100%;
+  }
+ .commentList {
+  margin-top: 20px; 
+ }   
+ .comments{
+  background-color: #f5f5f5;
+    border-radius: 4px;
+    color: #4a4a4a;
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding: 12px;
+ }  
