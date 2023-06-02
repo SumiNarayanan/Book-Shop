@@ -12,9 +12,16 @@ const Books = () => {
         const newBooklist=[...bookList,newBook]
         setBookList(newBooklist);
      } 
+
+     const removeBook=(index)=>{
+        const newBooklist=[...bookList]
+        newBooklist.splice(index,1)
+        setBookList(newBooklist)
+
+     }
   return (
     <>
-<Booklist bookList={bookList}/>
+<Booklist bookList={bookList} removeBook={removeBook}/>
 <Addbook addBook={addBook}/>
     </>
   )

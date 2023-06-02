@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import PanoramaFishEyeIcon from "@mui/icons-material/PanoramaFishEye";
-const Booklist = ({bookList}) => {
+const Booklist = ({bookList,removeBook}) => {
     const[showModel,setShowModel]=useState(false);
     const[comment,setComment]=useState("")
     const[commentList,setCommentList]=useState([])
 
+    const[edit,setEdit]=useState(false)
+    const[updatedProgress,setUpdatedProgress]=useState("")
+    const[updatedChapter,setUpdatedChapter]=useState("")
+
     // const[bookList,setBookList]  =useState([])  
-        
+      const[saveProgress,setSaveProgress] =useState(false) 
     
 
     const handleClick =()=>{
@@ -28,7 +32,23 @@ const Booklist = ({bookList}) => {
     //     const newBooklist=[...bookList,newBook]
     //     setBookList(newBooklist);
     //  } 
+    const handleRemoveTask=(index)=>{
+        removeBook(index);
+    }
+    const handleUpdate=()=>{
+        setEdit(!edit)
+        if (edit) {
+            // Apply the updated progress and chapter here
+            // For example:
+            setUpdatedProgress("");
+            setUpdatedChapter("");
+            setSaveProgress(false);
+    }
+}
     
+    const handleSaveProgress=()=>{
+        setSaveProgress(true); 
+    }
   return (
     <>
    {bookList.map((book, index) => (
@@ -41,8 +61,8 @@ const Booklist = ({bookList}) => {
                 <div className="buttons">
                   <button onClick={handleClick} >Comments</button>
     
-                  <button>Remove Book</button>
-                  <button>Edit</button>
+                  <button onClick={handleRemoveTask}>Remove Book</button>
+                  <button onClick={handleUpdate}>{edit ? "Edit":"Edit"}</button>
                 </div>
               </div>
             
@@ -58,9 +78,34 @@ const Booklist = ({bookList}) => {
                 </div>
                 </div>
                 <div className="BookContentLast">
-                  <input type="text" placeholder="Enter updated Progress" />
-                  <input type="text" placeholder="Enter updated Progress" />
-                  <button>Save Progress</button>
+                 
+                  {edit? (
+                    <>
+  <input type="number"
+   placeholder="Enter updated Progress"
+   value={updatedProgress} 
+   onChange={(e)=>setUpdatedProgress(e.target.value)}/>
+
+                  <input type="number"
+                   placeholder="Enter updated Progress" 
+                   value={updatedChapter}
+                   onChange={(e)=>setUpdatedChapter(e.target.value)}
+                   /> 
+                    {saveProgress ? (
+                    <button onClick={handleSaveProgress}>Update Progress</button>
+                  ) : (
+                    <button onClick={handleSaveProgress}>Save Progress</button>
+                  )}
+                  </>):(
+                    <>
+                      <h4 className="currentPage">Current Page</h4>
+                      <p className="currentPagenumber">Page <span>0</span></p>
+                      <button>Update Progress</button>
+                      </>
+                  )
+                  
+}
+                
                 </div>
               
             </div>
