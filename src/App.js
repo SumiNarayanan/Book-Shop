@@ -18,6 +18,7 @@ function App() {
 <Route path='/categories' element={<Categories/>}/>
 
       </Routes>
+      
       </BrowserRouter>
        
         
