@@ -45,34 +45,32 @@ body{
       display: flex;
       align-items: center;
     }
-    .BookContainer{
     
-      
-    }
     .BookContent{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 80%;
+    height: 150px;
     border: 1px solid rgb(173, 170, 170);
     margin: auto;
     margin-top: 40px;
     padding: 10px;
+    line-height: 7px;
     
     
     }
     .BookContentMain p{
-    
-color:#0290ff ;
+    color:#0290ff ;
     }
-    .buttons{
    
-    }
     .buttons button {
   
       cursor: pointer;
       color:#0290ff ;
        margin-right: 20px;
+      
+
       
     }
     
@@ -88,8 +86,25 @@ display: inline;
     }
       
     .BookContentLast {
+      width: 100px;
+      height: 100px;
       display:grid;
       grid-gap: 10px;
+      
+    }
+    .BookConentLastInput{
+      width: 100px;
+      height: 100px;
+      display:grid;
+      grid-gap: 10px;
+    }
+    .BookConentLastValue{
+margin-top: -20px;
+      width: 100px;
+      height: 100px;
+      display:grid;
+      grid-gap: 10px;
+
     }
     .BookContentLast button{
       background-color: #0290ff;
@@ -189,6 +204,7 @@ display: inline;
  .commentList {
   margin-top: 20px; 
  }   
+
  .comments{
   background-color: #f5f5f5;
     border-radius: 4px;
@@ -196,4 +212,41 @@ display: inline;
     font-size: 16px;
     margin-bottom: 8px;
     padding: 12px;
- }  
+ } 
+ .progress{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(hotpink 75%, pink 0);  
+
+}
+
+.categoryContainer{
+  width: 100%;
+height: 100vh;
+
+}
+ 
+.categoryContainer h1{
+text-align: center;
+
+}
+.CategorySelector {
+ 
+background-color: rgba(253, 248, 248, 0.563);
+  width: 80%;
+  height:80px;
+ border: 1px solid rgb(190, 187, 187);
+ margin: auto;
+ box-shadow:  0 2px 4px rgba(0,0,0,.1);
+position: relative;
+
+}
+
+.CategorySelector .select{
+ position: absolute;
+ left: 600px;
+ top: 30px;
+}

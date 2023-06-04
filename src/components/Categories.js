@@ -1,8 +1,13 @@
 import React from 'react'
+import CategoryWrapper from './CategoryWrapper'
+import Booklist from './Booklist'
 
-const Categories = () => {
+const Categories = ({bookList}) => {
   return (
-    <div>Categories</div>
+    <>
+    <CategoryWrapper booklist={bookList}/>
+    <Booklist />
+    </>
   )
 }
 

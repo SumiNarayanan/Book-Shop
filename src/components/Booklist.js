@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import PanoramaFishEyeIcon from "@mui/icons-material/PanoramaFishEye";
+import CircularProgress from '@mui/material/CircularProgress';
+
 const Booklist = ({bookList,removeBook}) => {
     const[showModel,setShowModel]=useState(false);
     const[comment,setComment]=useState("")
@@ -10,7 +11,8 @@ const Booklist = ({bookList,removeBook}) => {
     const[updatedChapter,setUpdatedChapter]=useState("")
 
     // const[bookList,setBookList]  =useState([])  
-      const[saveProgress,setSaveProgress] =useState(false) 
+      const[saveProgress,setSaveProgress] =useState(false)
+       
     
 
     const handleClick =()=>{
@@ -51,7 +53,7 @@ const Booklist = ({bookList,removeBook}) => {
     }
   return (
     <>
-   {bookList.map((book, index) => (
+   {bookList && bookList.map((book, index) => (
             <div className="BookContainer" key={index}>
             <div className="BookContent">
               <div className="BookContentMain">
@@ -68,11 +70,11 @@ const Booklist = ({bookList,removeBook}) => {
             
               <div className="BookContentMiddle">
                 <div className="progress">
-                  <PanoramaFishEyeIcon />
+                <div className="progressValue" style={{transform:`rotate(${updatedProgress}deg)`}}> </div>
                 </div>
                 <div className="percentageContainer">
-                  <div className="percentageNumber">
-                    <span>64 %</span>
+                  <div className="percentageNumber" >
+                    <span>{updatedProgress} %</span>
                     <p className="completed">completed</p>
                   </div>
                 </div>
@@ -80,14 +82,14 @@ const Booklist = ({bookList,removeBook}) => {
                 <div className="BookContentLast">
                  
                   {edit? (
-                    <>
+                    <div className="BookConentLastInput">
   <input type="number"
    placeholder="Enter updated Progress"
    value={updatedProgress} 
    onChange={(e)=>setUpdatedProgress(e.target.value)}/>
 
                   <input type="number"
-                   placeholder="Enter updated Progress" 
+                   placeholder="Enter updated Chapter" 
                    value={updatedChapter}
                    onChange={(e)=>setUpdatedChapter(e.target.value)}
                    /> 
@@ -96,12 +98,12 @@ const Booklist = ({bookList,removeBook}) => {
                   ) : (
                     <button onClick={handleSaveProgress}>Save Progress</button>
                   )}
-                  </>):(
-                    <>
-                      <h4 className="currentPage">Current Page</h4>
+                  </div>):(
+                    <div className="BookConentLastValue">
+                      <p className="currentPage">Current Page</p>
                       <p className="currentPagenumber">Page <span>0</span></p>
                       <button>Update Progress</button>
-                      </>
+                      </div>
                   )
                   
 }
