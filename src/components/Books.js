@@ -3,22 +3,22 @@ import Booklist from './Booklist'
 import Addbook from './Addbook'
 
 
-const Books = () => {
+const Books = ({bookList,addBook,removeBook}) => {
 
-    const[bookList,setBookList]  =useState([]) 
+    // const[bookList,setBookList]  =useState([]) 
     
     
-    const addBook=(newBook)=>{
-        const newBooklist=[...bookList,newBook]
-        setBookList(newBooklist);
-     } 
+    // const addBook=(newBook)=>{
+    //     const newBooklist=[...bookList,newBook]
+    //     setBookList(newBooklist);
+    //  } 
 
-     const removeBook=(index)=>{
-        const newBooklist=[...bookList]
-        newBooklist.splice(index,1)
-        setBookList(newBooklist)
+    //  const removeBook=(index)=>{
+    //     const newBooklist=[...bookList]
+    //     newBooklist.splice(index,1)
+    //     setBookList(newBooklist)
 
-     }
+    //  }
   return (
     <>
 

@@ -7,7 +7,7 @@ const Booklist = ({bookList,removeBook}) => {
     const[commentList,setCommentList]=useState([])
 
     const[edit,setEdit]=useState(false)
-    const[updatedProgress,setUpdatedProgress]=useState("")
+    const[updatedProgress,setUpdatedProgress]=useState(64)
     const[updatedChapter,setUpdatedChapter]=useState("")
 
     // const[bookList,setBookList]  =useState([])  
@@ -69,16 +69,26 @@ const Booklist = ({bookList,removeBook}) => {
               </div>
             
               <div className="BookContentMiddle">
+                {/* <div className="progress">
+                <div className="progressValue" style={{transform:`rotate(${updatedProgress*3.6 }deg)`}}> </div>
+                
+                </div> */}
                 <div className="progress">
-                <div className="progressValue" style={{transform:`rotate(${updatedProgress}deg)`}}> </div>
-                </div>
+  <CircularProgress
+    variant="determinate"
+    value={updatedProgress}
+    size={60}
+    thickness={3}
+    className="progressValue"
+  />
+</div>
                 <div className="percentageContainer">
                   <div className="percentageNumber" >
-                    <span>{updatedProgress} %</span>
+                    <span>{updatedProgress}%</span>
                     <p className="completed">completed</p>
                   </div>
                 </div>
-                </div>
+                </div>  
                 <div className="BookContentLast">
                  
                   {edit? (
@@ -115,9 +125,9 @@ const Booklist = ({bookList,removeBook}) => {
         
     ))}
   
-      <div>
+      {/* <div>
       <hr className="separator" />;
-      </div>
+      </div> */}
       {showModel &&(
          <div className="modal">
          <div className="modalContent">
