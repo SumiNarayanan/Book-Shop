@@ -3,9 +3,10 @@ import React ,{useState}from 'react';
 
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom';
 import Books from './components/Books';
 import Categories from './components/Categories';
+
 
  
 function App() {
@@ -28,11 +29,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar/>
+     
       <Routes>
-      <Route path='/books' element={<Books bookList={bookList} addBook={addBook} removeBook={removeBook} />}/>
+        <Route exact path='/'  element={<Navigate to ='/books'/>}/>
+            <Route path='/books' element={<Books bookList={bookList} addBook={addBook} removeBook={removeBook} />}/>
 <Route path='/categories' element={<Categories bookList={bookList}/>}/>
 
       </Routes>
+    
   
       </BrowserRouter>
        
